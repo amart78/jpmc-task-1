@@ -212,7 +212,8 @@ def get(req_handler, routes):
                 req_handler.end_headers()
                 params = read_params(req_handler.path)
                 data = json.dumps(handler(routes, params)) + '\n'
-                req_handler.wfile.write(bytes(data, encoding='utf-8'))
+                req_handler.wfile.write(bytes(data))
+
                 return
 
 
